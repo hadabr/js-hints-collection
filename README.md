@@ -1,1 +1,1 @@
-# js-hints-collection
+# JS hints collection
