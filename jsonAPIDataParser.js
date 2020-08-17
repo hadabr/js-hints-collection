@@ -1,5 +1,5 @@
   
-// useful for small JSON response body in a combination with precise URI request
+// useful for small, but highly nested JSON response body in a combination with precise URI request
 // i.e., https://od-api.oxforddictionaries.com/api/v2/${endpoint}/en-us/`, where {endpoint} is a word to search
 // and we need to retrieve only short definitions:
 // the adress would be something like response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
