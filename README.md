@@ -3,11 +3,11 @@
 Useful for highly or chaotic nested JSON - parses response data,  
 automatically extract required data entity by its key.
 
-> i.e., let URI requst is `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
-> we would retrive all data of ```{wordToFind}```, but need to treat only definitions  
-> in the case full "address" could be something like:  
-> ```res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions```  
-> what could mean a lot of repeating (i.e., loops) or too complex code.    
+i.e., let URI requst is `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
+we would retrive all data of ```{wordToFind}```, but need to treat only definitions  
+in the case full "address" could be something like:  
+```res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions```  
+what could mean a lot of repeating (i.e., loops) or too complex code.    
   
 This recursive parser solves that for you.
 
