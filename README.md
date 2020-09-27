@@ -17,9 +17,8 @@ jsonDataParser(myJSON, myKey)
 ```
 [myJSON] - some JSON body, - i.e., response;  
 [myKey] - the entity you're trying to reach - i.e., definitions  
-```javascript
-const results = res.data;    
-jsonDataParser(results, definitions)
+```javascript   
+jsonDataParser(res.data, definitions)
 ```
 ### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
