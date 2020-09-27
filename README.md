@@ -10,7 +10,6 @@ in the case full "address" could be something like:
 what could mean a lot of repeating (i.e., loops) or too complex code.    
   
 This recursive parser solves that for you.
-
 ### API
 
 ```jsonDataParser(myJSON, myKey)```  
@@ -18,7 +17,6 @@ This recursive parser solves that for you.
 [myKey] - the entity you're trying to reach - i.e., definitions  
 ```const results = res.data;```    
 ```jsonDataParser(results, definitions)```
- 
 ### Normalization
 
 This is only for small apps and solutions, as it parses response data easier,   
