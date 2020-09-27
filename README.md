@@ -1,7 +1,7 @@
 ### Description
 
-Useful for highly or chaotic nested JSON - parses response data,  
-automatically extract required data entity by its key.
+> Useful for highly or chaotic nested JSON - parses response data,  
+> automatically extract required data entity by its key.
 
 i.e., let URI requst is `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
 we would retrive all data of ```{wordToFind}```, but need to treat only definitions  
