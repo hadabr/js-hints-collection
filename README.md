@@ -8,7 +8,7 @@
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It recursively parses  
-response data, automatically extract required entity  
+a response data, automatically extract a required entity  
 by its key.
 ### API
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
