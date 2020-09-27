@@ -1,29 +1,52 @@
 ### Description
 
-Useful for highly or chaotic nested JSON - parses response data,  
-automatically extract required data entity by its key.
-
-i.e.  
-```javascript
-// we would retrive all data of {wordToFind} from Oxford dictionary API  
-const url = `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
-// but need to treat only definitions  
-// in this case the full "address" could be something like:  
-let definitions = res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
-// what could mean a lot of repeating (i.e., loops) or too complex code    
-```
-This recursive parser solves that for you.
+Useful for highly or chaotic nested JSON - what could mean  
+a lot of repeating or too complex code. It parses  
+response data, automatically extract required entity  
+by its key.
 ### API
 
 ```javascript
 jsonDataParser(myJSON, myKey)  
 ```
-[myJSON] - some JSON body, - i.e., res.data;  
+[myJSON] - some JSON body, - i.e., response;  
 [myKey] - the entity you're trying to reach - i.e., definitions  
 ```javascript
 const results = res.data;    
 jsonDataParser(results, definitions)
 ```
+### Live example  
+```javascript
+// we would retrive all data of {word_to_find} from Oxford dictionary API  
+// from https://od-api.oxforddictionaries.com/{some_url_endpoint}/{word_to_find} 
+const axios = require("axios");
+const url = require("url");  
+
+const endpoint = `https://od-api.oxforddictionaries.com/{some_url_endpoint}/`;
+const wordToFind = {word_to_find};
+URL = url.resolve(endpoint, wordToFind);
+const response = async () => {
+      await axios
+            .get(URL, {
+                 headers: {
+                 "Accept": "application/json",
+                 app_id: this.api_id,
+                 app_key: this.api_key,
+                 },
+            })
+            .then(res => res.data) 
+            .catch(err => err.res.data);
+}
+// but need to treat only definitions  
+// in this case the full "address" could be something like:  
+const definitions = response.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
+```
+```javascript
+// instead we can use
+const jsonDataParser = require("./jsonDataParser");
+const definitions = jsonDataParser(response, definitions)
+```
+
 ### Normalization
 
 This is only for small apps and solutions, as it parses response data easier,   
