@@ -1,7 +1,7 @@
-[Description](#Description)
-[API](#API)
-[Live example](#Live-example)
-[Normalization](#Normalization)
+[Description](#Description)  
+[API](#API)  
+[Live example](#Live-example)  
+[Normalization](#Normalization)  
  
  ### Description
 
