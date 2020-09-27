@@ -15,11 +15,15 @@ let definitions = res.data.results[0].lexicalEntries[0].entries[0].senses[0].def
 This recursive parser solves that for you.
 ### API
 
-jsonDataParser(myJSON, myKey) 
+```javascript
+jsonDataParser(myJSON, myKey)  
+```
 [myJSON] - some JSON body, - i.e., res.data;  
 [myKey] - the entity you're trying to reach - i.e., definitions  
+```javascript
 const results = res.data;    
 jsonDataParser(results, definitions)
+```
 ### Normalization
 
 This is only for small apps and solutions, as it parses response data easier,   
@@ -34,4 +38,4 @@ To normalize:
    [Wikipedia]: <https://en.wikipedia.org/wiki/Database_normalization>
    [Normalizr]: <https://github.com/paularmstrong/normalizr>
    [example]: <https://egghead.io/lessons/javascript-redux-normalizing-api-responses-with-normalizr>
-R
+
