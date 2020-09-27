@@ -1,23 +1,20 @@
-// useful for highly nested JSON 
-// i.e., URI request = `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${endpoint}`, {endpoint} = a word to search
-// we need to retrieve only its definitions
-// in the case the full adress could be something like:
-// response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
-// what means a lot of repeating or too complex code
-// 
-// this recursive parser will solve that
-// pass as myObj your JSON (i.e. response.data body)
-// and as myKey - the key you're trying to reach (i.e., definitions)
-// jsonDataParser(res.data, definitions)
+// parses recursively highly nested JSON to extract some entity
+// i.e., we need to retrieve only its definitions
+// for cases like:
+// res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
 
-const jsonDataParser = (myObj, myKey) => {
+// [myJSON] - some JSON body, - i.e., res.data;
+// [myKey] - the entity you're trying to reach - i.e., definitions
+
+const jsonDataParser = (myJSON, myKey) => {
+  const myObj = JSON.parse(myJSON);
   const outputArr = [];
-  // recursively search for values of [key] in JSONarray
+  // search for values of [key] in array values
   const _recursFunc = (obj, arr, key) => {
     // check if current [obj] is a proper Object
     if (typeof obj === 'object' && obj !== null && obj.constructor !== Array) {
       for (let [_key, value] of Object.entries(obj)) {
-        // check if we've found what is needed
+        // check if we've found what is required
         if (_key === key) {        
           if (typeof value === 'object' && obj !== null) {
             // stringifies one-item array
