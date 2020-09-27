@@ -5,7 +5,7 @@
 [Normalization](#Normalization)  
  
 ### Description
-[↑ To the beginning](#Table-of-contents)  
+<sup>[↑ To the beginning]</sup>(#Table-of-contents)  
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It parses  
 response data, automatically extract required entity  
