@@ -1,7 +1,7 @@
 ### Description
 
-> Useful for highly or chaotic nested JSON - parses response data,  
-> automatically extract required data entity by its key.
+Useful for highly or chaotic nested JSON - parses response data,  
+automatically extract required data entity by its key.
 
 i.e.  
 ```javascript
