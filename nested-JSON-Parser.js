@@ -1,5 +1,5 @@
 // useful for highly nested JSON 
-// i.e., url = `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${endpoint}`, {endpoint} = a word to search
+// i.e., URI request = `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${endpoint}`, {endpoint} = a word to search
 // we need to retrieve only its definitions
 // in the case the full adress could be something like:
 // response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
