@@ -42,4 +42,5 @@ const jsonDataParser = (myObj, myKey) => {
   return outputArr;
 }
 
-module.exports = jsonDataParser;
+// export default jsonDataParser;
+// module.exports = jsonDataParser;
