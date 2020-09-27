@@ -12,7 +12,7 @@ This recursive parser will solve that for you.
 
 #### API
   
-Pass as myObj your JSON (i.e. res.data body),  
+Pass as myObj your JSON (i.e., res.data),  
 and as myKey - the key you're trying to reach (i.e., definitions)  
 ```jsonDataParser(res.data, definitions)```
  
