@@ -40,6 +40,7 @@ const response = async () => {
 // but need to treat only definitions  
 // in this case the full "address" could be something like:  
 const definitions = response.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
+// and the way to get it would be long
 ```
 ```javascript
 // instead we can use
