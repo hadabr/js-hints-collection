@@ -1,4 +1,9 @@
-### Description
+[Description](#Description)
+[API](#API)
+[Live example](#Live-example)
+[Normalization](#Normalization)
+ 
+ ### Description
 
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It parses  
