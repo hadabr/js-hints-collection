@@ -11,7 +11,7 @@ a lot of repeating or too complex code. It parses
 response data, automatically extract required entity  
 by its key.
 ### API
-[↑ To the beginning](#Table-of-contents)   
+[<sup>↑ To the beginning</sup>](#Table-of-contents)  
 ```javascript
 jsonDataParser(myJSON, myKey)  
 ```
@@ -22,7 +22,7 @@ const results = res.data;
 jsonDataParser(results, definitions)
 ```
 ### Live example  
-[↑ To the beginning](#Table-of-contents)    
+[<sup>↑ To the beginning</sup>](#Table-of-contents)     
 ```javascript
 // we would retrive all data of {word_to_find} from Oxford dictionary API  
 // from https://od-api.oxforddictionaries.com/{some_url_endpoint}/{word_to_find} 
@@ -58,7 +58,7 @@ const definitions = jsonDataParser(response, definitions)
 ```
 
 ### Normalization
-[↑ To the beginning](#Table-of-contents)  
+[<sup>↑ To the beginning</sup>](#Table-of-contents)  
 This is only for small apps and solutions, as it parses response data easier,   
 allowing to write less code but doesn't normalize the data.  
 
