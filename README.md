@@ -2,13 +2,13 @@
 
 Useful for highly or chaotic nested JSON - simplifies handling res.data body   
 
-i.e., URI request = `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${someWord}`, {endpoint} = a word to search  
-we need to retrieve only {someWord} definitions  
+i.e., URI requst is `https://od-api.oxforddictionaries.com/{something}/{wordToFind}` 
+we retrive all {wordToFind} data, but need to treat only definitions  
 in the case it could be something like:  
 response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]  
-what means a lot of repeating or too complex code    
+what could mean a lot of repeating (i.e., loops) or too complex code.    
   
-this recursive parser will solve that
+This recursive parser will solve that for you.
 
 #### API
   
