@@ -1,6 +1,6 @@
-#### Description
+### Description
 
-Useful for highly or chaotic nested JSON - simplifies handling response data.
+#### Useful for highly or chaotic nested JSON - simplifies handling response data.
 
 i.e., let URI requst is `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
 we would retrive all data of ```{wordToFind}```, but need to treat only definitions  
@@ -10,14 +10,14 @@ what could mean a lot of repeating (i.e., loops) or too complex code.
   
 This recursive parser will solve that for you.
 
-#### API
+### API
 
 ```jsonDataParser(myObj, myKey)```  
 Pass as myObj your JSON (i.e., res.data),  
 As myKey - the key you're trying to reach (i.e., definitions)  
 ```jsonDataParser(res.data, definitions)```
  
-#### Normalization
+### Normalization
 
 This is only for small apps and solutions, as it parses repsonse data easier,   
 allowing to write less code but doesn't normalize the data.  
