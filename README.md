@@ -19,8 +19,10 @@ As myKey - the key you're trying to reach (i.e., definitions)
  
 #### Normalization
 
-This is only for small apps and solutions, as it parses repsonse data allowing to write less codem but doesn't normalize.
-To normalize data:
+This is only for small apps and solutions, as it parses repsonse data easier,   
+allowing to write less code but doesn't normalize the data.  
+
+To normalize:
   
 - Database normalization on [Wikipedia]
 - check [Normalizr] utility by Paul Armstrong  
