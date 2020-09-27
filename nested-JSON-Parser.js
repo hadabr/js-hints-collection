@@ -1,12 +1,15 @@
-  
-// useful for small, but highly nested JSON response body in a combination with precise URI request
-// i.e., https://od-api.oxforddictionaries.com/api/v2/${endpoint}/en-us/`, where {endpoint} is a word to search
-// and we need to retrieve only short definitions:
-// the adress would be something like response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
-// retrieving all definitions for the output could mean a lot of repeating code
-// but not today
-// this recursive parser will solve that - just pass as myObj API data (i.e. JSON body about a request word)
-// and as myKey - i.e., the word which definitions we need
+// useful for highly nested JSON 
+// i.e., url = `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${endpoint}`, {endpoint} = a word to search
+// we need to retrieve only its definitions
+// in the case the full adress could be something like:
+// response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+// what means a lot of repeating or too complex code
+// 
+// this recursive parser will solve that
+// pass as myObj your JSON (i.e. response.data body)
+// and as myKey - the key you're trying to reach (i.e., definitions)
+// jsonDataParser(res.data, definitions)
+
 const jsonDataParser = (myObj, myKey) => {
   const outputArr = [];
   // recursively search for values of [key] in JSONarray
