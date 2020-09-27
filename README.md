@@ -6,7 +6,7 @@
 i.e.  
 ```javascript
 // we would retrive all data of {wordToFind} from Oxford dictionary API  
-let url = `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
+const url = `https://od-api.oxforddictionaries.com/{...}/{wordToFind}`  
 // but need to treat only definitions  
 // in this case the full "address" could be something like:  
 let definitions = res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
@@ -15,11 +15,11 @@ let definitions = res.data.results[0].lexicalEntries[0].entries[0].senses[0].def
 This recursive parser solves that for you.
 ### API
 
-```jsonDataParser(myJSON, myKey)```  
+jsonDataParser(myJSON, myKey) 
 [myJSON] - some JSON body, - i.e., res.data;  
 [myKey] - the entity you're trying to reach - i.e., definitions  
-```const results = res.data;```    
-```jsonDataParser(results, definitions)```
+const results = res.data;    
+jsonDataParser(results, definitions)
 ### Normalization
 
 This is only for small apps and solutions, as it parses response data easier,   
