@@ -1,11 +1,18 @@
-/** parses recursively highly nested JSON to extract required entity
+/** @module jsonDataParser */
+/** @desc
+* parses recursively highly nested JSON to extract required entity
 * i.e., let our JSON is  a word from some dictionary
 * we need to handle only its definitions -
 * for cases like:
 * res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
 *
-* [myJSON] -> some JSON body, - i.e., res.data for the word;
-* [myKey] -> required entity - i.e., its definitions
+* @param {(string|Object)} myJSON -> some JSON body
+* @param {string} myKey -> required entity 
+* @example
+* // returns array corresponded to myKey
+* jsonDataParser(res.data, definitions)
+* where res.data - res.data for the word
+* definitions - its definitions
 */
 
 const jsonDataParser = (myJSON, myKey) => {
@@ -41,5 +48,6 @@ const jsonDataParser = (myJSON, myKey) => {
   return outputArr;
 }
 
-/** export default jsonDataParser; */
 /** module.exports = jsonDataParser; */
+export default jsonDataParser; 
+
