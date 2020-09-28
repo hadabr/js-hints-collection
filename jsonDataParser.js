@@ -1,10 +1,11 @@
-// parses recursively highly nested JSON to extract some entity
-// i.e., we need to retrieve only its definitions
+// parses recursively highly nested JSON to extract required entity
+// i.e., let our JSON is  a word from some dictionary
+// we need to handle only its definitions -
 // for cases like:
 // res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
 
-// [myJSON] - some JSON body, - i.e., res.data;
-// [myKey] - the entity you're trying to reach - i.e., definitions
+// [myJSON] -> some JSON body, - i.e., res.data for the word;
+// [myKey] -> required entity - i.e., its definitions
 
 const jsonDataParser = (myJSON, myKey) => {
   const myObj = JSON.parse(myJSON);
