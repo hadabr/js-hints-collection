@@ -1,8 +1,8 @@
 ### Table of contents
-[Description](#Description)  
-[API](#API)  
-[Live example](#Live-example)  
-[Normalization](#Normalization)  
+[<sup>Description</sup>](#Description)  
+[<sup>API</sup>](#API)  
+[<sup>Live example</sup>](#Live-example)  
+[<sup>Normalization</sup>](#Normalization)  
  
 ### Description
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
