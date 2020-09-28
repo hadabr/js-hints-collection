@@ -16,10 +16,8 @@ by its key.
 jsonDataParser(myJSON, myKey)  
 ```
 [myJSON] - some JSON body, - i.e., response;  
-[myKey] - the entity you're trying to reach - i.e., definitions  
-```javascript   
-jsonDataParser(res.data, definitions)
-```
+[myKey] - the entity you're trying to reach - i.e., product name  
+
 #### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
 ```javascript
