@@ -1,16 +1,16 @@
-### Table of contents
-[<sup>Description</sup>](#Description)  
-[<sup>API</sup>](#API)  
-[<sup>Live example</sup>](#Live-example)  
-[<sup>Normalization</sup>](#Normalization)  
+#### Table of contents
+[Description](#Description)  
+[API](#API)  
+[Live example](#Live-example)  
+[Normalization](#Normalization)  
  
-### Description
+#### Description
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It recursively parses  
 response data and automatically extract required entity  
 by its key.
-### API
+#### API
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 ```javascript
 jsonDataParser(myJSON, myKey)  
@@ -20,7 +20,7 @@ jsonDataParser(myJSON, myKey)
 ```javascript   
 jsonDataParser(res.data, definitions)
 ```
-### Live example  
+#### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
 ```javascript
 // we would retrive all data of {word_to_find} from Oxford dictionary API  
@@ -56,7 +56,7 @@ const definitions = jsonDataParser(response, definitions)
 // done
 ```
 
-### Normalization
+#### Normalization
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 This is only for small apps and solutions, as it parses response data easier,   
 allowing to write less code but doesn't normalize the data.  
