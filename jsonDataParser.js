@@ -47,7 +47,7 @@ const jsonDataParser = (myJSON, myKey) => {
     } else if (obj.constructor === Array) {
       /** handle if obj is an Array, jump to Object case in the next iteration 
       * for the <key, value of Object.entries> comparison
-      * @param {Object} item - an array item, when Object value was an Array */
+      * @param {Object} item - an array item, when Object value was an Array */ 
       for (let item of obj) {
         _recursFunc(item, arr, key)
       }
