@@ -6,9 +6,8 @@
  
 #### Description
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
-Useful for highly or chaotic nested JSON - what could mean a lot of repeating,   
-surplus code. It recursively parses a response data and automatically    
-extract required entity by its key. It doesn't normalize the data, check [links](#Normalization) below. 
+Useful for highly or chaotic nested JSON - what could mean a lot of repeating, surplus code. It recursively parses a response data    
+and automatically extract required entity by its key. It doesn't normalize the data, check [links](#Normalization) below. 
 #### API
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 ```javascript
