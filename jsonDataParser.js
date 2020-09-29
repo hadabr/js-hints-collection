@@ -25,7 +25,7 @@ const jsonDataParser = (myJSON, myKey) => {
   * search for values of [key] in array values */
   const _recursFunc = (obj, arr, key) => {
     /** check if the current obj is a proper Object 
-    * for the [key, value of Object.entries] comparison */
+    * for the <key, value of Object.entries> comparison */
     if (typeof obj === 'object' && obj !== null && obj.constructor !== Array) {
       /** @param {string} _key - an inner key */
       for (let [_key, value] of Object.entries(obj)) {
@@ -46,7 +46,7 @@ const jsonDataParser = (myJSON, myKey) => {
       }
     } else if (obj.constructor === Array) {
       /** handle if obj is an Array, jump to Object case in the next iteration 
-      * for the [key, value of Object.entries] comparison
+      * for the <key, value of Object.entries> comparison
       * @param {Object} item - an array item, when Object value was an Array */
       for (let item of obj) {
         _recursFunc(item, arr, key)
