@@ -21,13 +21,13 @@ returns a ```value``` corresponding ```myKey``` as at-least-one-item array
 #### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
 ```javascript
-// we would retrive all data of {word_to_find} via Oxford dictionary API  
-// from https://od-api.oxforddictionaries.com/{some_url_endpoint}/{word_to_find} 
+// we would retrive all data of <word_to_find> via Oxford dictionary API  
+// from https://od-api.oxforddictionaries.com/<some_url_endpoint>/<word_to_find> 
 const axios = require("axios");
 const url = require("url");  
 
-const endpoint = `https://od-api.oxforddictionaries.com/{some_url_endpoint}/`;
-const wordToFind = {word_to_find};
+const endpoint = `https://od-api.oxforddictionaries.com/<some_url_endpoint>/`;
+const wordToFind = <word_to_find>;
 const URL = url.resolve(endpoint, wordToFind);
 const response = async () => {
       await axios
