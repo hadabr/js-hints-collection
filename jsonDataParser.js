@@ -6,21 +6,25 @@
 * for cases like:
 * res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
 *
-* @param {(string|Object)} myJSON -> some JSON body
-* @param {string} myKey -> required entity 
+* @param {(string|Object)} myJSON - some JSON body
+* @param {string} myKey - required entity 
 * @example
-* // returns array corresponded to myKey
+* // res.data - res.data for the word
 * jsonDataParser(res.data, definitions)
-* where res.data - res.data for the word
-* definitions - its definitions
+* @returns {Object} - definitions array
 */
 
 const jsonDataParser = (myJSON, myKey) => {
   const myObj = JSON.parse(myJSON);
   const outputArr = [];
-  /** search for values of [key] in array values */
+  /** @function _recursFunc
+  * @param {Object} obj - search field;
+  * an Object for the descending decomposition - from initial myObj to its lowest values till we reach required
+  * @param {Object} arr - a result array to return
+  * @param {string} key - the target key
+  * search for values of [key] in array values */
   const _recursFunc = (obj, arr, key) => {
-    /** check if current [obj] is a proper Object */
+    /** check if the current obj is a proper Object */
     if (typeof obj === 'object' && obj !== null && obj.constructor !== Array) {
       for (let [_key, value] of Object.entries(obj)) {
         /** check if we've found what is required */
@@ -31,14 +35,17 @@ const jsonDataParser = (myJSON, myKey) => {
           }
           outputArr.push(value);
         } else {
-          /** if not, then repeat starting from [value] */
+          /** if not, then repeat starting in
+          * @param {Object} value - decomposed Object */
           if (typeof value === 'object' && obj !== null) {
             _recursFunc(value, arr, key);
           }
         }
       }
     } else if (obj.constructor === Array) {
-      /** handle if [obj] is an array, jump to "object case" in the next iteration */
+      /** handle if obj is an Array, jump to Object case in the next iteration 
+      * otherwise the main [key, value of Object.entries] comparison not available
+      * @param {Object} item - an array item, when Object value was an Array */
       for (let item of obj) {
         _recursFunc(item, arr, key)
       }
