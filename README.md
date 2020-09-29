@@ -15,9 +15,9 @@ by its key. It doesn't normalize the data, check [links](#Normalization) below.
 ```javascript
 jsonDataParser(myJSON, myKey)  
 ```
-[myJSON] - some JSON body, - i.e., response;  
-[myKey] - the entity you're trying to reach - i.e., product name  
-returns a [value] corresponding [myKey] as at-least-one-item array
+```myJSON``` - some JSON body, - i.e., response;  
+```myKey``` - the entity you're trying to reach - i.e., product name  
+returns a ```value``` corresponding ```myKey``` as at-least-one-item array
 
 #### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
