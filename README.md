@@ -9,7 +9,7 @@
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It recursively parses  
 response data and automatically extract required entity  
-by its key. It doesn't normalize the data, check links below. 
+by its key. It doesn't normalize the data, check [links](#Normalization) below. 
 #### API
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 ```javascript
