@@ -56,5 +56,5 @@ const jsonDataParser = (myJSON, myKey) => {
 }
 
 /** module.exports = jsonDataParser; */
-export default jsonDataParser; 
+/** export default jsonDataParser; */
 
