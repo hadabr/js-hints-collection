@@ -20,9 +20,10 @@ returns a ```value``` corresponding ```myKey``` as at-least-one-item array
 
 #### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
+
+we would retrive all data of <word_to_find> via Oxford dictionary API  
+from https://od-api.oxforddictionaries.com/<some_url_endpoint>/<word_to_find>  
 ```javascript
-// we would retrive all data of <word_to_find> via Oxford dictionary API  
-// from https://od-api.oxforddictionaries.com/<some_url_endpoint>/<word_to_find> 
 const axios = require("axios");
 const url = require("url");  
 
@@ -47,8 +48,8 @@ const definitions = ...
 // as in this case the full "address" could be something like:  
 // response.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
 ```
+instead we can use  
 ```javascript
-// instead we can use 
 const jsonDataParser = require("./jsonDataParser");
 ...
 // no code needed to reach response.results[0].lexicalEntries[...
