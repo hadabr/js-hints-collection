@@ -24,19 +24,21 @@ const jsonDataParser = (myJSON, myKey) => {
   * @param {string} key - the target key
   * search for values of [key] in array values */
   const _recursFunc = (obj, arr, key) => {
-    /** check if the current obj is a proper Object */
+    /** check if the current obj is a proper Object 
+    * for the [key, value of Object.entries] comparison */
     if (typeof obj === 'object' && obj !== null && obj.constructor !== Array) {
+      /** @param {string} _key - an inner key */
       for (let [_key, value] of Object.entries(obj)) {
         /** check if we've found what is required */
         if (_key === key) {        
-          if (typeof value === 'object' && obj !== null) {
-            /** stringifies one-item array */
-            value = value.toString();
+          if (value.constructor === Array && value.length === 1) {
+            /** exclude one-item array wrapper */
+            value = value[0];
           }
           outputArr.push(value);
         } else {
           /** if not, then repeat starting in
-          * @param {Object} value - decomposed Object */
+          * @param {Object} value - a decomposed Object */
           if (typeof value === 'object' && obj !== null) {
             _recursFunc(value, arr, key);
           }
@@ -44,7 +46,7 @@ const jsonDataParser = (myJSON, myKey) => {
       }
     } else if (obj.constructor === Array) {
       /** handle if obj is an Array, jump to Object case in the next iteration 
-      * otherwise the main [key, value of Object.entries] comparison not available
+      * for the [key, value of Object.entries] comparison
       * @param {Object} item - an array item, when Object value was an Array */
       for (let item of obj) {
         _recursFunc(item, arr, key)
@@ -52,9 +54,10 @@ const jsonDataParser = (myJSON, myKey) => {
     }
   }
   _recursFunc(myObj, outputArr, myKey);
+  /** module.exports = jsonDataParser; */
   return outputArr;
 }
 
 /** module.exports = jsonDataParser; */
-/** export default jsonDataParser; */
+export default jsonDataParser; 
 
