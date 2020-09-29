@@ -51,8 +51,7 @@ const definitions = response.results[0].lexicalEntries[0].entries[0].senses[0].d
 // instead we can use 
 const jsonDataParser = require("./jsonDataParser");
 ...
-// no code needed to reach
-// response.results[0].lexicalEntries[0].entries[0].senses[0].definitions
+// no code needed to reach response.results[0].lexicalEntries[0].entries[0].senses[0].definitions
 // just
 const definitions = jsonDataParser(response, definitions)
 // done
