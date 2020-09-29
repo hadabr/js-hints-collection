@@ -9,7 +9,7 @@
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It recursively parses  
 response data and automatically extract required entity  
-by its key.
+by its key. It doesn't normalize the data, check links below. 
 #### API
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 ```javascript
@@ -17,6 +17,7 @@ jsonDataParser(myJSON, myKey)
 ```
 [myJSON] - some JSON body, - i.e., response;  
 [myKey] - the entity you're trying to reach - i.e., product name  
+returns a [value] corresponding [myKey] as at-least-one-item array
 
 #### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
@@ -57,9 +58,9 @@ const definitions = jsonDataParser(response, definitions)
 #### Normalization
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 This is only for small apps and solutions, as it parses response data easier,   
-allowing to write less code but doesn't normalize the data.  
+allowing to write less code but, as told, doesn't normalize the data.  
 
-To normalize:
+To normalize look at:
   
 - Database normalization on [Wikipedia]
 - check [Normalizr] utility by Paul Armstrong  
