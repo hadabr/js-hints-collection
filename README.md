@@ -19,7 +19,6 @@ returns a ```value``` corresponding ```myKey``` as at-least-one-item array
 
 #### Live example  
 [<sup>↑ To the beginning</sup>](#Table-of-contents)     
-
 we would retrive all data of <word_to_find> via Oxford dictionary API  
 from https://od-api.oxforddictionaries.com/<some_url_endpoint>/<word_to_find>  
 ```javascript
