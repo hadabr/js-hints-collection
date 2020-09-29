@@ -54,7 +54,7 @@ const jsonDataParser = (myJSON, myKey) => {
     }
   }
   _recursFunc(myObj, outputArr, myKey);
-  /** module.exports = jsonDataParser; */
+  /** @returns {Object} as at-least-one-item array */
   return outputArr;
 }
 
