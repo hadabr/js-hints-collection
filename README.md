@@ -48,9 +48,12 @@ const definitions = response.results[0].lexicalEntries[0].entries[0].senses[0].d
 // and the way to get that would be long
 ```
 ```javascript
-// instead we can use simply
+// instead we can use 
 const jsonDataParser = require("./jsonDataParser");
 ...
+// no code needed to reach
+// response.results[0].lexicalEntries[0].entries[0].senses[0].definitions
+// just
 const definitions = jsonDataParser(response, definitions)
 // done
 ```
