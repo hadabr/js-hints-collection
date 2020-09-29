@@ -43,9 +43,10 @@ const response = async () => {
             .catch(err => err.res.data);
 }
 // but need to treat only definitions  
-// in this case the full "address" could be something like:  
-const definitions = response.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
-// and the way to get that would be long
+// a long way to get that 
+const definitions = ...
+// as in this case the full "address" could be something like:  
+// response.results[0].lexicalEntries[0].entries[0].senses[0].definitions;  
 ```
 ```javascript
 // instead we can use 
