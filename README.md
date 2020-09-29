@@ -8,7 +8,7 @@
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
 Useful for highly or chaotic nested JSON - what could mean  
 a lot of repeating or too complex code. It recursively parses  
-response data and automatically extract required entity  
+a response data and automatically extract required entity  
 by its key. It doesn't normalize the data, check [links](#Normalization) below. 
 #### API
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
@@ -59,7 +59,7 @@ const definitions = jsonDataParser(response, definitions)
 
 #### Normalization
 [<sup>↑ To the beginning</sup>](#Table-of-contents)  
-This is only for small apps and solutions, as it parses response data easier,   
+This is only for small apps and solutions, as it only parses a data,   
 allowing to write less code but, as told, doesn't normalize the data.  
 
 To normalize look at:
