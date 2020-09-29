@@ -29,7 +29,7 @@ const url = require("url");
 
 const endpoint = `https://od-api.oxforddictionaries.com/{some_url_endpoint}/`;
 const wordToFind = {word_to_find};
-URL = url.resolve(endpoint, wordToFind);
+const URL = url.resolve(endpoint, wordToFind);
 const response = async () => {
       await axios
             .get(URL, {
