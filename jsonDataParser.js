@@ -6,12 +6,11 @@
 * for cases like:
 * res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
 *
-* @param {(string|Object)} myJSON - some JSON body
-* @param {string} myKey - required entity 
+* @param {(string|Object)} myJSON - some JSON body (i.e., res.data for the word)
+* @param {string} myKey - required entity (i.e., definitions)
 * @example
-* // res.data - res.data for the word
 * jsonDataParser(res.data, definitions)
-* @returns {Object} - definitions array
+* @returns {Object} - <definitions> array
 */
 
 const jsonDataParser = (myJSON, myKey) => {
@@ -22,12 +21,12 @@ const jsonDataParser = (myJSON, myKey) => {
   * an Object for the descending decomposition - from initial myObj to its lowest values till we reach required
   * @param {Object} arr - a result array to return
   * @param {string} key - the target key
-  * search for values of [key] in array values */
+  * search for values of <key> in array values */
   const _recursFunc = (obj, arr, key) => {
     /** check if the current obj is a proper Object 
     * for the <key, value of Object.entries> comparison */
     if (typeof obj === 'object' && obj !== null && obj.constructor !== Array) {
-      /** @param {string} _key - an inner key */
+      /** @param {string} <_key> - an inner key */
       for (let [_key, value] of Object.entries(obj)) {
         /** check if we've found what is required */
         if (_key === key) {        
@@ -60,4 +59,3 @@ const jsonDataParser = (myJSON, myKey) => {
 
 /** module.exports = jsonDataParser; */
 export default jsonDataParser; 
-
