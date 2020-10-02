@@ -1,11 +1,56 @@
 /** @module jsonDataParser */
-/** @desc
-* parses recursively highly nested JSON to extract required entity
-* i.e., let our JSON is  a word from some dictionary
-* we need to handle only its definitions -
-* for cases like:
-* res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
-*
+/** 
+* @param {(string|Object)} myJSON - JSON body (i.e., res.data for the word)
+* @param {string} myKey - required entity (i.e., definitions)
+* @example
+* jsonDataParser(res.data, definitions)
+* @returns {Object} - <definitions> array
+*/
+const jsonDataParser = (myJSON, myKey) => {
+    const myObj = JSON.parse(myJSON);
+    const outputArr = [];
+    /** @function _recursFunc
+    * @param {Object} obj - search area
+    * from <myObj> down to its deepest nested Object values
+    * @param {Object} arr - a result array to return
+    * @param {string} key - the target/control key
+    * search for <obj> value(s) corresponding the <key> */
+    const _recursFunc = (obj, arr, key) => {
+      /** check if the current <obj> is a proper Object */
+      if (typeof obj === 'object' && obj !== null && obj.constructor !== Array) {
+        /** @param {string} <_key> - an inner current key */
+        for (let [_key, value] of Object.entries(obj)) {
+          /** check if we've found what is required */
+          if (_key === key) {        
+            if (value.constructor === Array && value.length === 1) {
+              /** exclude one-item arrays */
+              value = value[0];
+            }
+            /** despite several cycles we push only what needed */
+            arr.push(value);
+          } else {
+            /** if not, then repeat starting in
+            * @param {Object} value - level -1 Object value as search area */
+            if (typeof value === 'object' && obj !== null) {
+              _recursFunc(value, arr, key);
+            }
+          }
+        }
+      } else if (obj.constructor === Array) {
+        /** handle if <obj> is an Array, trying to jump to Object case in the next iteration 
+        * @param {Object} item */ 
+        for (let item of obj) {
+          _recursFunc(item, arr, key)
+        }
+      }
+    }
+    _recursFunc(myObj, outputArr, myKey);
+    /** @returns {Object} as at-least-one-item array */
+    return outputArr;
+  }
+  
+  /** module.exports = jsonDataParser; */
+  export default jsonDataParser; 
 * @param {(string|Object)} myJSON - some JSON body (i.e., res.data for the word)
 * @param {string} myKey - required entity (i.e., definitions)
 * @example
