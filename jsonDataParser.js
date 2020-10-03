@@ -1,7 +1,12 @@
 /** @module jsonDataParser */
-/** 
-* @param {(string|Object)} myJSON - JSON body (i.e., res.data for the word)
-* @param {string} myKey - required entity (i.e., definitions)
+/** @desc
+* parses recursively highly nested JSON to extract required entity
+* for cases like res.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
+* (from Oxford Dictionary API)
+* i.e., that it is not a normalization, for normalization check Normalizr
+*
+* @param {(string|Object)} myJSON - JSON body (e.g., <res.data> for a word the dictionary)
+* @param {string} myKey - required entity (e.g., we need only its definitions)
 * @example
 * jsonDataParser(res.data, definitions)
 * @returns {Object} - <definitions> array
